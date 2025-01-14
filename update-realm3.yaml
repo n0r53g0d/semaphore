@@ -14,12 +14,12 @@
     - name: update mod-playerbots
       shell: cd /realms/realm3/busypvp/modules/mod-playerbots && git pull
 
-    - name: new Build
-      shell: cd /realms/realm3/busypvp/build && cmake ../ -DCMAKE_INSTALL_PREFIX=/realms/realm3/busypvp/env/dist/ -DCMAKE_C_COMPILER=/usr/bin/clang -DCMAKE_CXX_COMPILER=/usr/bin/clang++ -DWITH_WARNINGS=1 -DTOOLS_BUILD=all -DSCRIPTS=static -DMODULES=static
-
     - name: clean Build
       shell: rm -rf /realms/realm3/busypvp/build && mkdir /realms/realm3/busypvp/build
 
+    - name: new Build
+      shell: cd /realms/realm3/busypvp/build && cmake ../ -DCMAKE_INSTALL_PREFIX=/realms/realm3/busypvp/env/dist/ -DCMAKE_C_COMPILER=/usr/bin/clang -DCMAKE_CXX_COMPILER=/usr/bin/clang++ -DWITH_WARNINGS=1 -DTOOLS_BUILD=all -DSCRIPTS=static -DMODULES=static
+      
     - name: make Build
       shell: cd /realms/realm3/busypvp/build && make -j 8 && make install
 
