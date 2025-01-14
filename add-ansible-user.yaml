@@ -6,7 +6,7 @@
     - name: Create a new user
       user:
         name: ansible  # Replace with desired username
-        password: "{{ 'GDjzN3t5JUdWQXekSFHAYgs7' | password_hash('sha512') }}"  # Replace 'your_password' with the actual password
+        password: "{{ 'GDjzN3t5JUdWQXekSFHAYgs7'}}"  # Replace 'your_password' with the actual password
         shell: /bin/bash
         state: present
 
