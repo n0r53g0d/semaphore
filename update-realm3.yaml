@@ -1,0 +1,24 @@
+- hosts: all
+
+  become: true
+  tasks:
+    - name: Update Realm3
+      shell: cd /realms/realm3/busypvp && git pull
+
+    - name: update mod-individual-progression
+      shell: cd /realms/realm3/busypvp/modules/mod-individual-progression && git pull
+
+    - name: update mod-npc-enchanter
+      shell: cd /realms/realm3/busypvp/modules/mod-npc-enchanter && git pull
+
+    - name: update mod-playerbots
+      shell: cd /realms/realm3/busypvp/modules/mod-playerbots && git pull
+
+    - name: new Build
+      shell: cd /realms/realm3/busypvp/build && cmake ../ -DCMAKE_INSTALL_PREFIX=/realms/realm3/busypvp/env/dist/ -DCMAKE_C_COMPILER=/usr/bin/clang -DCMAKE_CXX_COMPILER=/usr/bin/clang++ -DWITH_WARNINGS=1 -DTOOLS_BUILD=all -DSCRIPTS=static -DMODULES=static
+
+    - name: make Build
+      shell: cd /realms/realm3/busypvp/build && make -j 8 && make install
+
+    - name: Reboot
+      shell: reboot
