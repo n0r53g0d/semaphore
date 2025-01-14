@@ -1,15 +1,16 @@
 ---
 - name: Update all AZC components
 - hosts: all
+  - tasks:
 
-- import_playbook: apt-update.yaml
+    - import_playbook: apt-update.yaml
 
-- import_playbook: update-azcauth.yaml
+    - import_playbook: update-azcauth.yaml
 
-- import_playbook: update-realm1.yaml
+    - import_playbook: update-realm1.yaml
 
-- import_playbook: update-realm2.yaml
+    - import_playbook: update-realm2.yaml
 
-- import_playbook: update-realm3.yaml
+    - import_playbook: update-realm3.yaml
 
-- import_playbook: update-realm4.yaml
+    - import_playbook: update-realm4.yaml
