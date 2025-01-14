@@ -1,3 +1,4 @@
+tasks:
 - name: Update and Upgrade apt packages
   become: true
   apt:
