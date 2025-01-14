@@ -1,4 +1,4 @@
-- hosts: all
+- hosts: realm4
 
   become: true
   tasks:
