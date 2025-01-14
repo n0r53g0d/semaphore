@@ -10,12 +10,12 @@
         update_cache: yes
         cache_valid_time: 86400
 
-- include: update-azcauth.yaml
+- import_playbook: update-azcauth.yaml
 
-- include: update-realm1.yaml
+- import_playbook: update-realm1.yaml
 
-- include: update-realm2.yaml
+- import_playbook: update-realm2.yaml
 
-- include: update-realm3.yaml
+- import_playbook: update-realm3.yaml
 
-- include: update-realm4.yaml
+- import_playbook: update-realm4.yaml
