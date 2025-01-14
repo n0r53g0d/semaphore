@@ -4,7 +4,7 @@
   become: yes
   tasks:
     - name: Install passlib from apt
-      apt: name=passlib state-present update_cache=true
+      apt: name=passlib state=latest update_cache=true
 
     - name: Create a new user
       user:
