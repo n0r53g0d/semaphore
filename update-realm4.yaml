@@ -14,6 +14,9 @@
     - name: update mod-playerbots
       shell: cd /realms/realm4/busyrp/modules/mod-playerbots && git pull
 
+    - name: clean Build
+      shell: rm -rf /realms/realm4/busyrp/build && mkdir /realms/realm4/busyrp/build
+
     - name: new Build
       shell: cd /realms/realm4/busyrp/build && cmake ../ -DCMAKE_INSTALL_PREFIX=/realms/realm4/busyrp/env/dist/ -DCMAKE_C_COMPILER=/usr/bin/clang -DCMAKE_CXX_COMPILER=/usr/bin/clang++ -DWITH_WARNINGS=1 -DTOOLS_BUILD=all -DSCRIPTS=static -DMODULES=static
 
@@ -21,4 +24,4 @@
       shell: cd /realms/realm4/busyrp/build && make -j 8 && make install
 
     - name: Reboot
-      shell: reboot
+      reboot:

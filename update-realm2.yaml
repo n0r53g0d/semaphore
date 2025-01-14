@@ -23,6 +23,9 @@
     - name: update mod-solo-lfg
       shell: cd /realms/realm2/azerothcore-wotlk/modules/mod-solo-lfg && git pull
 
+    - name: clean Build
+      shell: rm -rf /realms/realm2/azerothcore-wotlk/build && mkdir /realms/realm2/azerothcore-wotlk/build
+
     - name: new Build
       shell: cd /realms/realm2/azerothcore-wotlk/build && cmake ../ -DCMAKE_INSTALL_PREFIX=/realms/realm2/azerothcore-wotlk/env/dist/ -DCMAKE_C_COMPILER=/usr/bin/clang -DCMAKE_CXX_COMPILER=/usr/bin/clang++ -DWITH_WARNINGS=1 -DTOOLS_BUILD=all -DSCRIPTS=static -DMODULES=static
 
@@ -30,4 +33,4 @@
       shell: cd /realms/realm2/azerothcore-wotlk/build && make -j 8 && make install
 
     - name: Reboot
-      shell: reboot
+      reboot:

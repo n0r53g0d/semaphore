@@ -20,6 +20,9 @@
     - name: update mod-ptr-template
       shell: cd /realms/realm1/azerothcore/modules/mod-ptr-template && git pull
 
+    - name: clean Build
+      shell: rm -rf /realms/realm1/azerothcore/build && mkdir /realms/realm1/azerothcore/build
+
     - name: new Build
       shell: cd /realms/realm1/azerothcore/build && cmake ../ -DCMAKE_INSTALL_PREFIX=/realms/realm1/azerothcore/env/dist/ -DCMAKE_C_COMPILER=/usr/bin/clang -DCMAKE_CXX_COMPILER=/usr/bin/clang++ -DWITH_WARNINGS=1 -DTOOLS_BUILD=all -DSCRIPTS=static -DMODULES=static
 
@@ -27,4 +30,4 @@
       shell: cd /realms/realm1/azerothcore/build && make -j 8 && make install
 
     - name: Reboot
-      shell: reboot
+      reboot:
