@@ -1,14 +1,6 @@
 ---
 - name: Update all AZC components
-- hosts: all
-
-  become: true
-  tasks:
-    - name: Update and Upgrade apt packages
-      apt:
-        upgrade: yes
-        update_cache: yes
-        cache_valid_time: 86400
+- import_playbook: apt-update.yaml
 
 - import_playbook: update-azcauth.yaml
 
