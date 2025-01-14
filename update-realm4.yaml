@@ -2,32 +2,32 @@
 
   become: true
   tasks:
-    #- name: Update Realm4
+    - name: Update Realm4
       shell: cd /realms/realm4/busyrp && git pull
 
-    #- name: update mod-individual-progression
+    - name: update mod-individual-progression
       shell: cd /realms/realm4/busyrp/modules/mod-individual-progression && git pull
 
-    #- name: update mod-npc-enchanter
+    - name: update mod-npc-enchanter
       shell: cd /realms/realm4/busyrp/modules/mod-npc-enchanter && git pull
 
-    #- name: update mod-playerbots
+    - name: update mod-playerbots
       shell: cd /realms/realm4/busyrp/modules/mod-playerbots && git pull
 
-    #- name: clean Build
+    - name: clean Build
       shell: rm -rf /realms/realm4/busyrp/build && mkdir /realms/realm4/busyrp/build
 
-    #- name: new Build
+    - name: new Build
       shell: cd /realms/realm4/busyrp/build && cmake ../ -DCMAKE_INSTALL_PREFIX=/realms/realm4/busyrp/env/dist/ -DCMAKE_C_COMPILER=/usr/bin/clang -DCMAKE_CXX_COMPILER=/usr/bin/clang++ -DWITH_WARNINGS=1 -DTOOLS_BUILD=all -DSCRIPTS=static -DMODULES=static
 
-    #- name: make Build
+    - name: make Build
       shell: cd /realms/realm4/busyrp/build && make -j 8 && make install
 
-    #- name: Reboot
+    - name: Reboot
       reboot:
         reboot_timeout: 3600
 
-    #- name: Wait for reconnect
+    - name: Wait for reconnect
       wait_for_connection:
         connect_timeout: 10
         sleep: 5

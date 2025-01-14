@@ -1,6 +1,6 @@
 ---
-- name: Update all AZC components
-- hosts: all
+#- name: Update all AZC components
+#- hosts: all
   tasks:
 
     - name: Apt Updates
