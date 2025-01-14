@@ -1,5 +1,7 @@
 ---
 - name: Update all AZC components
+- hosts: all
+
 - import_playbook: apt-update.yaml
 
 - import_playbook: update-azcauth.yaml
