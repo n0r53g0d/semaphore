@@ -3,8 +3,8 @@
   hosts: all
   become: yes
   tasks:
-    - name: Install passlib
-      shell: apt install passlib -y
+    - name: Install passlib from apt
+      apt: name=passlib state-present update_cache=true
 
     - name: Create a new user
       user:
