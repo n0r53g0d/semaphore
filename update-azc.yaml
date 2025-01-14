@@ -3,14 +3,20 @@
 - hosts: all
   tasks:
 
-    - import_playbook: apt-update.yaml
+    - name: Apt Updates
+      import_playbook: apt-update.yaml
 
-    - import_playbook: update-azcauth.yaml
+    - name: update Auth
+      import_playbook: update-azcauth.yaml
 
-    - import_playbook: update-realm1.yaml
+    - name: update Realm1
+      import_playbook: update-realm1.yaml
 
-    - import_playbook: update-realm2.yaml
+    - name: update Realm2
+      import_playbook: update-realm2.yaml
 
-    - import_playbook: update-realm3.yaml
+    - name: update Realm3
+      import_playbook: update-realm3.yaml
 
-    - import_playbook: update-realm4.yaml
+    - name: update realm4
+      import_playbook: update-realm4.yaml
