@@ -1,7 +1,7 @@
 ---
 - name: Update all AZC components
 - hosts: all
-  - tasks:
+  tasks:
 
     - import_playbook: apt-update.yaml
 
