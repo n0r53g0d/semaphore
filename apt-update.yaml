@@ -1,7 +1,9 @@
-tasks:
-- name: Update and Upgrade apt packages
+- hosts: all
+
   become: true
-  apt:
-    upgrade: yes
-    update_cache: yes
-    cache_valid_time: 86400
+  tasks:
+    - name: Update and Upgrade apt packages
+      apt:
+        upgrade: yes
+        update_cache: yes
+        cache_valid_time: 86400
