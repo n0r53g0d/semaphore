@@ -45,7 +45,7 @@
       shell: cmake ../ -DCMAKE_INSTALL_PREFIX=/realms/realm1/azerothcore/env/dist/ -DCMAKE_C_COMPILER=/usr/bin/clang -DCMAKE_CXX_COMPILER=/usr/bin/clang++ -DWITH_WARNINGS=1 -DTOOLS_BUILD=all -DSCRIPTS=static -DMODULES=static
 
     - name: make Build
-      shell: make -j 4 && make install
+      shell: make -j 8 && make install
 
     - name: Reboot
       shell: reboot
