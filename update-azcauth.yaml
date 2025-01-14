@@ -12,7 +12,7 @@
       shell: cd /azcore/azerothcore/build && cmake ../ -DCMAKE_INSTALL_PREFIX=/azcore/azerothcore/env/dist/ -DCMAKE_C_COMPILER=/usr/bin/clang -DCMAKE_CXX_COMPILER=/usr/bin/clang++ -DWITH_WARNINGS=1 -DTOOLS_BUILD=all -DSCRIPTS=static -DMODULES=static
 
     - name: make Build
-      shell: cd /azcore/azerothcore/build && make -j 8 && make install
+      shell: cd /azcore/azerothcore/build && make -j 4 && make install
 
     - name: Reboot
       reboot:
