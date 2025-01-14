@@ -1,0 +1,33 @@
+- hosts: all
+
+  become: true
+  tasks:
+    - name: Update Realm2
+      shell: cd /realms/realm2/azerothcore-wotlk && git pull
+
+    - name: update mod-autobalance
+      shell: cd /realms/realm2/azerothcore-wotlk/modules/mod-autobalance && git pull
+
+    - name: update mod-individual-progression
+      shell: cd /realms/realm2/azerothcore-wotlk/modules/mod-individual-progression && git pull
+
+    - name: update mod-npc-enchanter
+      shell: cd /realms/realm2/azerothcore-wotlk/modules/mod-npc-enchanter && git pull
+
+    - name: update mod-playerbots
+      shell: cd /realms/realm2/azerothcore-wotlk/modules/mod-playerbots && git pull
+
+    - name: update mod-reagent-bank
+      shell: cd /realms/realm2/azerothcore-wotlk/modules/mod-reagent-bank && git pull
+
+    - name: update mod-solo-lfg
+      shell: cd /realms/realm2/azerothcore-wotlk/modules/mod-solo-lfg && git pull
+
+    - name: new Build
+      shell: cd /realms/realm2/azerothcore-wotlk/build && cmake ../ -DCMAKE_INSTALL_PREFIX=/realms/realm2/azerothcore-wotlk/env/dist/ -DCMAKE_C_COMPILER=/usr/bin/clang -DCMAKE_CXX_COMPILER=/usr/bin/clang++ -DWITH_WARNINGS=1 -DTOOLS_BUILD=all -DSCRIPTS=static -DMODULES=static
+
+    - name: make Build
+      shell: cd /realms/realm2/azerothcore-wotlk/build && make -j 8 && make install
+
+    - name: Reboot
+      shell: reboot
