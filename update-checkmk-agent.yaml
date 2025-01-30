@@ -1,0 +1,6 @@
+- hosts: all
+
+  become: true
+  tasks:
+    - name: Update and Upgrade apt packages
+      shell: cd /tmp && wget http://10.11.0.72/bobmonitoring/check_mk/agents/check-mk-agent_2.3.0p25-1_all.deb && apt install /tmp/check-mk-agent_2.3.0p25-1_all.deb -y
