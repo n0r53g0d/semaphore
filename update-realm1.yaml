@@ -8,9 +8,6 @@
     - name: update mod-autobalance
       shell: cd /realms/realm1/azerothcore/modules/mod-autobalance && git pull
 
-    - name: update mod-individual-progression
-      shell: cd /realms/realm1/azerothcore/modules/mod-individual-progression && git pull
-
     - name: update mod-npc-enchanter
       shell: cd /realms/realm1/azerothcore/modules/mod-npc-enchanter && git pull
 
