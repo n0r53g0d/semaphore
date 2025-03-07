@@ -2,26 +2,35 @@
 
   become: true
   tasks:
-    - name: Update Realm1
-      shell: cd /realms/realm1/azerothcore && git pull
+    - name: Update realm1
+      shell: cd /realms/realm1/azerothcore-wotlk && git pull
 
     - name: update mod-autobalance
-      shell: cd /realms/realm1/azerothcore/modules/mod-autobalance && git pull
+      shell: cd /realms/realm1/azerothcore-wotlk/modules/mod-autobalance && git pull
+
+    - name: update mod-individual-progression
+      shell: cd /realms/realm1/azerothcore-wotlk/modules/mod-individual-progression && git pull
 
     - name: update mod-npc-enchanter
-      shell: cd /realms/realm1/azerothcore/modules/mod-npc-enchanter && git pull
+      shell: cd /realms/realm1/azerothcore-wotlk/modules/mod-npc-enchanter && git pull
 
-    - name: update mod-ptr-template
-      shell: cd /realms/realm1/azerothcore/modules/mod-ptr-template && git pull
+    - name: update mod-playerbots
+      shell: cd /realms/realm1/azerothcore-wotlk/modules/mod-playerbots && git pull
+
+    - name: update mod-reagent-bank
+      shell: cd /realms/realm1/azerothcore-wotlk/modules/mod-reagent-bank && git pull
+
+    - name: update mod-solo-lfg
+      shell: cd /realms/realm1/azerothcore-wotlk/modules/mod-solo-lfg && git pull
 
     - name: clean Build
-      shell: rm -rf /realms/realm1/azerothcore/build && mkdir /realms/realm1/azerothcore/build
+      shell: rm -rf /realms/realm1/azerothcore-wotlk/build && mkdir /realms/realm1/azerothcore-wotlk/build
 
     - name: new Build
-      shell: cd /realms/realm1/azerothcore/build && cmake ../ -DCMAKE_INSTALL_PREFIX=/realms/realm1/azerothcore/env/dist/ -DCMAKE_C_COMPILER=/usr/bin/clang -DCMAKE_CXX_COMPILER=/usr/bin/clang++ -DWITH_WARNINGS=1 -DTOOLS_BUILD=all -DSCRIPTS=static -DMODULES=static
+      shell: cd /realms/realm1/azerothcore-wotlk/build && cmake ../ -DCMAKE_INSTALL_PREFIX=/realms/realm1/azerothcore-wotlk/env/dist/ -DCMAKE_C_COMPILER=/usr/bin/clang -DCMAKE_CXX_COMPILER=/usr/bin/clang++ -DWITH_WARNINGS=1 -DTOOLS_BUILD=all -DSCRIPTS=static -DMODULES=static
 
     - name: make Build
-      shell: cd /realms/realm1/azerothcore/build && make -j 8 && make install
+      shell: cd /realms/realm1/azerothcore-wotlk/build && make -j 8 && make install
 
     - name: Reboot
       reboot:
