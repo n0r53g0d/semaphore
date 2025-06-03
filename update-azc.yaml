@@ -9,8 +9,8 @@
     - name: update Auth
       import_playbook: update-azcauth.yaml
 
-    #- name: update Realm1
-    #  import_playbook: update-realm1.yaml
+    - name: update Realm1
+      import_playbook: update-realm1.yaml
 
     - name: update Realm2
       import_playbook: update-realm2.yaml

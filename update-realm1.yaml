@@ -5,23 +5,8 @@
     - name: Update realm1
       shell: cd /realms/realm1/azerothcore-wotlk && git pull
 
-    - name: update mod-autobalance
-      shell: cd /realms/realm1/azerothcore-wotlk/modules/mod-autobalance && git pull
-
-    - name: update mod-individual-progression
-      shell: cd /realms/realm1/azerothcore-wotlk/modules/mod-individual-progression && git pull
-
-    - name: update mod-npc-enchanter
-      shell: cd /realms/realm1/azerothcore-wotlk/modules/mod-npc-enchanter && git pull
-
     - name: update mod-playerbots
       shell: cd /realms/realm1/azerothcore-wotlk/modules/mod-playerbots && git pull
-
-    - name: update mod-reagent-bank
-      shell: cd /realms/realm1/azerothcore-wotlk/modules/mod-reagent-bank && git pull
-
-    - name: update mod-solo-lfg
-      shell: cd /realms/realm1/azerothcore-wotlk/modules/mod-solo-lfg && git pull
 
     - name: clean Build
       shell: rm -rf /realms/realm1/azerothcore-wotlk/build && mkdir /realms/realm1/azerothcore-wotlk/build
